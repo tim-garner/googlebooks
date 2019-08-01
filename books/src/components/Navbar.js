@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
 
 const Navbar = props => 
      (
@@ -10,14 +12,26 @@ const Navbar = props =>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item active">
-              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-            </li>
+              <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+              <Link to="/" className={window.location.pathname === "/" ? "nav-link active" : "nav-link"}>
+          
+        </Link>
+      </li>
+            
             <li class="nav-item">
-              <a class="nav-link" href="#">Search</a>
-            </li>
+              <a class="nav-link" href="/search">Search</a>
+              <Link to="/" className={window.location.pathname === "Search" ? "nav-link active" : "nav-link"}>
+          
+        </Link>
+      </li>
+            
             <li class="nav-item">
-              <a class="nav-link" href="#">Saved</a>
-            </li>
+              <a class="nav-link" href="/saved">Saved</a>
+              <Link to="/" className={window.location.pathname === "Saved" ? "nav-link active" : "nav-link"}>
+          
+        </Link>
+      </li>
+            
 
           </ul>
         </div>
